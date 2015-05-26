@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="pier">
 <head>
 	<meta charset="UTF-8">
 	<title>Pier Credit</title>
@@ -7,7 +7,21 @@
 	<link rel="stylesheet" type="text/css" href="/stylesheets/pier-font.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/global.css">
 </head>
-<body>
+<body ng-controller="PierController">
 	<h1>Pier chinese project!</h1>
+	<ui-view></ui-view>
+
+
+	<!-- Always need to load jQuery at first -->
+	  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	  <script src="/bower_components/angular/angular.min.js"></script>
+	  <!-- use angular-ui-router to replace AngularJS default stateful router -->
+	  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	  <!-- angular-ui-bootstrap -->
+	  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+	  <!--load pier project-->
+	  <script src="/pier.js"></script>
 </body>
 </html>
