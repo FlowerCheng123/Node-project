@@ -1,0 +1,6 @@
+body {
+  font-family: 'pier_font_light','Whitney SSm A','Whitney SSm B',Helvetica,Arial;
+} 
+* {outline:none !important;}
+/*html5*/
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}

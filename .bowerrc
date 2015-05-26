@@ -1,4 +1,4 @@
 {
-	"directory": "myapp/pier/bower_components",
+	"directory": "myapp/public/bower_components",
 	"json": "myapp/pier/bower.json"
 }
