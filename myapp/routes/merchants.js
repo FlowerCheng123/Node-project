@@ -8,8 +8,9 @@ router.get('/*', function(req, res, next) {
   console.log( 'I am come in here222 ', path.basename() );
 
   http.get( 'http://pierup.ddns.net:8686/common_api/v1/query/get_countries', function( response ){
-     console.log( 'Flower get countries success', response.statusCode );
+     
      response.on( 'data', function( result ){
+     	console.log( 'Flower get countries success', result );
      	res.send( result );
      } );
      response.on( 'end', function(){

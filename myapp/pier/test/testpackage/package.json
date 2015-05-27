@@ -1,0 +1,18 @@
+{
+  "name": "piertest",
+  "version": "0.0.0",
+  "description": "just test npm ",
+  "main": "./lib/interface.js",
+  "scripts": {
+    "test": "abcd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "null"
+  },
+  "keywords": [
+    "null"
+  ],
+  "author": "cheng_cong123@163.com",
+  "license": "ISC"
+}
