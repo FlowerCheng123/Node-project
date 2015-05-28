@@ -4,12 +4,55 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var log4js = require('log4js');
+var app = express();
+var pierLog;
+//config for the log file
+if (app.get('env') === 'development'){
+  log4js.configure({
+    appenders: [
+        {
+            type: "file",
+            filename: "pier-dev.log",
+            category: [ 'pier','console' ]
+        },
+        {
+            type: "console"
+        }
+    ],
+    replaceConsole: true
+  });
+
+  log4js.loadAppender('file');
+  pierLog = log4js.getLogger('pier-dev');
+}else if(app.get('env') === 'production'){
+  log4js.configure({
+    appenders: [
+        {
+            type: "file",
+            filename: "pier-product.log",
+            category: [ 'pier','console' ]
+        },
+        {
+            type: "console"
+        }
+    ],
+    replaceConsole: true
+  });
+
+  log4js.loadAppender('file');
+  pierLog = log4js.getLogger('pier-product');
+}
+
+log4js.loadAppender('file');
+//only errors and above get logged.
+//you can also set this log level in the config object
+//via the levels field.
+pierLog.setLevel('INFO');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var merchants = require( './routes/merchants' );
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
